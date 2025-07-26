@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagercoil Buliders</title>
+   <style>
+    /*  Navbar Section */
+.navbar-section {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #040837;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #FFCC00;
+}
+
+/*  Enquiry Button */
+.enq-btn {
+    background-color: #FFCC00;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.enq-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #040837;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+}
+/*  Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+
+/* Hero Section (Panner Section) */
+.panner-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+/* Background Image */
+.panner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Dark Overlay */
+.overlay {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0);
+    pointer-events: none; /* Ensures button is clickable */
+}
+
+/* Centering Content */
+.panner-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/*  Properly Aligned Text */
+.content {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: #FFC107;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 20px;
+    color: white;
+    max-width: 80%;
+    margin: auto;
+}
+
+/* Corner Borders */
+.content::before,
+.content::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 3px solid #FFC107;
+}
+
+/* Top Left Corner */
+.content::before {
+    top: -15px;
+    left: -15px;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* Bottom Right Corner */
+.content::after {
+    bottom: -15px;
+    right: -15px;
+    border-left: none;
+    border-top: none;
+}
+
+/*  Button Styling */
+.btn {
+    background: #FFCC00;
+    color: black;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e0a800;
+}
+
+/*  Fully Responsive */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .content::before,
+    .content::after {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/*  Features Section */
+.features-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    color: black;
+    overflow: hidden;
+}
+
+/* Background Image */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/*  Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.0);
+    z-index: 1;
+}
+
+/* Title */
+.features-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.features-section h2 span {
+    color: #FFCC00;
+}
+
+/*  Features Container */
+.features-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/*  Feature Box */
+.feature-box {
+    background-color: #040837;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.feature-box img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/*  Hover Animation */
+.feature-box:hover {
+    background-color: #FFCC00;
+    color: black;
+    transform: scale(1.1); /* Slightly increase size */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/*  Add Bounce Effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.feature-box:hover img {
+    animation: bounce 0.5s ease-in-out; /* Make the icon bounce */
+}
+/*  Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-choose-us .container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.why-choose-us h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.why-choose-us h2 span {
+    color: #FFCC00; /* Yellow Highlight for "Choose" */
+}
+
+.why-choose-us p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .why-choose-us h2 {
+        font-size: 28px;
+    }
+    
+    .why-choose-us p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
+
+/* Service Box */
+.services-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    color: black;
+    overflow: hidden;
+    background-color: rgb(246, 246, 191);
+}
+.services-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 0px 40px;
+}
+.service-box {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 50%;
+}
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 80%;
+}
+.service-box img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+/* Service Content */
+.service-text {
+    text-align: left;
+}
+
+.service-text h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.service-text p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.2;
+}
+
+/* Building Image */
+.service-image{
+    width: 20%;
+}
+.service-image img {
+    width: 280px;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services-container {
+       display: block;
+    }
+    .service-image  {
+        display: none;
+    }
+    .services{
+        width: 100%;
+    }
+    .service-box {
+        width: 50%;
+    }
+    .service-box img {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width:640px){
+    .service-box {
+        width: 100%;
+    }
+    .service-box img {
+        margin-bottom: 10px;
+    }
+    .service-text h3 {
+        font-size: 18px;
+    }
+    .service-text p {
+        font-size: 12px;
+    }
+}
+
+/* Services we provides */
+.services-we-provide {
+    background-color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-info-block {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Section Title */
+.services-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.services-title span {
+    color: #FFCC00;
+}
+
+/* Description Text */
+.services-description {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-top: 10px;
+}
+  
+/* Images section starts here */
+.buit-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Individual Service Box */
+.buit-box {
+    position: relative;
+    width: 50%; /* Two equal-sized images */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Images */
+.buit-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.buit-box:hover .buit-pic {
+    transform: scale(1.05);
+}
+
+/* Service Name (Button) */
+.buit-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    background: navy;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.buit-tag:hover {
+    background: darkblue;
+}
+
+/*  Responsive Design  */
+@media (max-width: 768px) {
+    .buit-container {
+        flex-direction: column; /* Stack images on small screens */
+    }
+    
+    .buit-box {
+        width: 100%;
+    }
+}
+
+
+/* Container for Row */
+.const-row {
+    display: flex;
+    gap: 15px;
+    max-width: 78%;
+    margin: auto;
+    align-items: center;
+}
+
+/* Large Box on the Left */
+.const-large {
+    flex: 2; /* Takes more space */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Small Box on the Right */
+.const-small {
+    flex: 1; /* Takes less space */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Image Styles */
+.const-pic {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.const-large:hover .const-pic,
+.const-small:hover .const-pic {
+    transform: scale(1.05);
+}
+
+/* Text Button */
+.const-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    background: navy;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.const-tag:hover {
+    background: darkblue;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .const-row {
+        flex-direction: column;
+    }
+
+    .const-large, .const-small {
+        width: 100%;
+    }
+    .const-large, .const-small img{
+        width: 100%;
+        height: 400px;
+    }
+}
+.view-btn{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+}
+.view-btn button{
+    background-color: #FFCC00;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Review section starts here */
+.review{
+    background-color: rgb(246, 246, 191);
+    margin: 50px 0px;
+    width: 100%;
+}
+/* Review Section */
+.review-section {
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 50px 0px;
+}
+
+/* Title Styling */
+.review-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #FFCC00;
+}
+
+/* Review Container */
+.review-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 90px 0px;
+}
+
+/* Review Card */
+.review-card {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 30%;
+    height: 400px;
+    position: relative;
+    text-align: center;
+}
+.review-card1 {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 30%;
+    position: relative;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.review-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.review-content {
+    padding: 15px;
+    background: white;
+    position: relative;
+    border-radius: 25px;
+    width: 90%;
+    margin: auto;
+    margin-top: -180px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid white;
+}
+
+.review-content h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.review-content p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.stars {
+    font-size: 18px;
+    color: #FFCC00;
+}
+
+/* Responsive Design */
+@media (max-width:992px){
+    .review-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .review-card {
+        width: 50%;
+        margin: auto;
+    }
+    .review-card1 {
+        margin-top: 0px;
+        width: 50%;
+        margin: auto;
+    }
+}
+@media (max-width: 464px) {
+    .review-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .review-card1 {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+/* popup starts here */
+.container8 {
+    display: flex;
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.left-side {
+    width: 40%;
+    background: #fff4cc;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.left-side h2 {
+    font-size: 24px;
+    color: black;
+}
+.left-side span {
+    color: #f4b400;
+    font-weight: bold;
+}
+.right-side {
+    width: 60%;
+    padding: 30px;
+    position: relative; /* Needed for close button */
+}
+.right-side h2 {
+    font-size: 24px;
+    color: black;
+}
+.highlight {
+    color: #f4b400;
+    font-weight: bold;
+}
+input, select, textarea {
+    width: 98%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #FFCC00;
+    border-radius: 5px;
+}
+.radio input{
+    width: 20px;
+}
+
+.radio button{
+    margin-top: 20px;
+    display: inline-block;
+}
+.form-button {
+    width: 100%;
+    background: #f4b400;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+label {
+    margin: 10px 0;
+}
+.illustration {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Popup Modal */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+
+}
+
+.p-close{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.pp-close{
+    width: 50%;
+    button{
+        float: right;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+    .popup-content{
+        width: 80%;
+        height: auto;
+    }
+}
+@media (max-width:905px){
+    .left-side{
+        display: none;
+    }
+    .container8 {
+        width: 80%;
+        height: auto;
+    }
+    .right-side{
+        width: 100%;
+        height: auto;
+        padding: 10px 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+        height: auto;
+    }
+    .container8 {
+        width: 80%;
+        height: auto;
+    }
+}
+/* Footer section starts here */
+.footer {
+    background-color: #040837;
+    color: white;
+    padding: 40px 60px;
+    font-family: poppins, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: auto;
+}
+
+/* Columns */
+.footer-column {
+    flex: 1;
+    margin-right: 40px;
+}
+
+/* Logo */
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+/* Heading Styling */
+.footer h3, h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer .highlight {
+    color: #f7c843;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+/* Paragraph & List */
+.footer p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 20px;
+    margin-bottom: 8px;
+    line-height: 1.9;
+    cursor: pointer;
+}
+
+/* Social Icons */
+.social-icons img {
+    margin-top: 20px;
+    width: 40px;
+    margin-right: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Contact Section */
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon{
+    border: 1px solid #FFCC00;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    padding: 3px;
+    background-color: #FFCC00;
+    color: black;
+}
+/* Responsive */
+@media (max-width:1440px){
+    .footer{
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .footer-container{
+        width: 100%;
+    }
+    .footer-column{
+        flex: 2;
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+    .footer p{
+        font-size: 17px;
+    }
+    ul li{
+        font-size: 17;
+    }
+    .contact-info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 407px) {
+   .info1{
+     width: 70%;
+   }
+}
+    </style>
+  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Navbar section starts here -->
+    <div class="navbar-section">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/web/index.html"><img src="/const/images/logo.jpg" alt=""></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/about/index.html">About Us</a></li>
+                <li><a href="/service/index.html">Services</a></li>
+                <li><a href="./design&plan.html">Plan  & Pricing</a></li>
+                <li><a href="/project1/index.html">Projects</a></li>
+                <li><a href="#"><button class="enq-btn" onclick="openPopup()">Enquiry</button></a></li>            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </nav>
+    </div>
+
+    <!-- popup starts here -->
+    <div class="popup" id="enquiryPopup">
+        <div class="container8">
+            <div class="left-side">
+                <h2>Do you have a <span>Questions?</span></h2>
+                <p>Serving the greater Seattle area beyond. For more information on our services, or to inquire about a future project, give us a call!</p>
+                <img src="/const/images/Group 233.png " alt="Get in touch illustration" class="illustration">
+            </div>
+            <div class="right-side">
+                <div class="flex items-center min-h-screen bg-gray-50 dark:bg-gray-900">
+                    <div class="container13 mx-auto">
+                      <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+                        <div class="text-center">
+                          
+                            <div class="p-close">
+                                <div class="pp-close">
+                                    <h2>Quick <span class="highlight">Enquiry</span></h2>
+                                </div>
+                                <div class="pp-close">
+                                    <button class="close-btn" onclick="closePopup()">&times;</button> 
+                                </div>
+                            </div>
+                          
+
+                        </div>
+                        <div class="m-7">
+                          <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <input type="hidden" name="access_key" value="dfbba4d0-e916-43a9-9ba1-31e2fa3b272c" />
+                            <input type="hidden" name="subject" value="Enquire Form Submission " />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                  
+                            <div class="mb-6">
+                              <label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Full Name</label>
+                              <input type="text" name="name" id="name" placeholder="Enter Your Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                              <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label>
+                              <input type="email" name="email" id="email" placeholder="Enter Your Email" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                              <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Phone Number</label>
+                              <input type="number" name="phone" id="phone" placeholder="Enter Phone Number" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Select Services</label>
+                                <select id="services">
+                                    <option value="">Services</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Interior Design">Interior Design</option>
+                                    <option value="Renovation">Renovation</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                              <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Your Message</label>
+                  
+                              <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <div class="radio">
+                                    <input type="checkbox" id="robotCheck">
+                                    <label>I'm not a robot</label>
+                                    <button type="submit" class="form-button">Submit</button>
+                                </div>
+                            </div>
+                            <p class="text-base text-center text-gray-400" id="result"></p>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panner section starts here -->
+    <div class="panner-section">
+        <div class="panner-image">
+            <img src="/const/images/Nagercoil Builders Website.png " alt="">
+        </div>
+        <div class="panner-content">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Your <span>dream</span> space, built to perfection.</h1>
+                <p>Ready to bring your project to life? Let's create something extraordinary together.</p>
+            </div>
+            <div>
+                <!-- <a href="" class="btn" onclick="openPopup()" >Book Now</a> -->
+                <a href="#"><button class="enq-btn" onclick="openPopup()">Book Now</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <img src="/const/images/Rectangle 11.png " alt="Background Image" class="bg-image">
+        <div class="overlay"></div>
+        <h2 style="text-align: center;"><span>Nagercoil</span> Builders</h2>
+
+        <div class="features-container">
+            <div class="feature-box">
+                <img src="/const/images/4 1.png" alt="Calendar">
+                <p>Calendered Date</p>
+            </div>
+            <div class="feature-box">
+                <img src="/const/images/14 (1) 1.png " alt="Quality">
+                <p>Quality Guaranteed</p>
+            </div>
+            <div class="feature-box">
+                <img src="/const/images/12 (1) 1.png " alt="Low Cost">
+                <p>Low Cost</p>
+            </div>
+            <div class="feature-box">
+                <img src="/const/images/19 1.png" alt="Top Rated">
+                <p>Top Rated</p>
+            </div>
+            <div class="feature-box">
+                <img src="/const/images/6 (1) 1.png " alt="Budget">
+                <p>Budget Friendly</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why choose us     -->
+    <div class="why-choose-us">
+        <div class="container">
+            <h2>Why <span>Choose</span> Us</h2>
+            <p>
+                At Nagercoil Builders, we deliver top-quality construction with precision, reliability,
+                and excellence. Our expert team ensures on-time project completion, using premium materials
+                and innovative techniques. With a commitment to safety and customer satisfaction, we bring
+                your vision to life with professionalism and integrity. Choose us for a hassle-free
+                building experience!
+            </p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <div class="services-container">
+            <div class="services">
+                <div class="service-box">
+                    <img src="/const/images/3d-cartoon-scene-depicting-variety-people-multitasking.png"
+                        alt="Experienced Team">
+                    <div class="service-text">
+                        <h3>Experienced Team</h3>
+                        <p>Our experienced team combines expertise, innovation, and dedication to deliver exceptional
+                            construction results tailored to your vision.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <img src="/const/images/19-removebg-preview.png" alt="Quality Construction">
+                    <div class="service-text">
+                        <h3>Quality Construction</h3>
+                        <p>Delivering excellence through superior craftsmanship, durable materials, and meticulous
+                            attention to detail in every project.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <img src="/const/images/3d-cartoon-scene-depicting-variety-people-multitasking_23-2151294465-removebg-preview.png"
+                        alt="Customizable Designs">
+                    <div class="service-text">
+                        <h3>Customizable Designs</h3>
+                        <p>Experience the freedom of customizable designs tailored to match your unique vision and
+                            lifestyle.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <img src="/const/images/3d-render-construction-worker-family-with-child-white-background_1057-145926-removebg-preview.png"
+                        alt="Transparent Process">
+                    <div class="service-text">
+                        <h3>Transparent Process</h3>
+                        <p>Our transparent process ensures clear communication, no hidden costs, and full visibility at
+                            every stage, so you can trust us to deliver exactly what we promise.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <img src="/const/images/h34 (1).png " alt="Timely Completion">
+                    <div class="service-text">
+                        <h3>Timely Completion</h3>
+                        <p>We are committed to delivering every project on time, ensuring efficient execution without
+                            compromising on quality.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <img src="/const/images/2151755755.png" alt="In-house Experts">
+                    <div class="service-text">
+                        <h3>In-house team of experts</h3>
+                        <p>Our in-house team of experts ensures every project is executed with precision, expertise, and
+                            dedication.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-image">
+                <img src="/const/images/9 1.png" alt="Building">
+            </div>
+        </div>
+    </div>
+
+    <!-- Services we provides -->
+    <section class="services-we-provide">
+        <div class="services-info-block">
+            <h2 class="services-title"><span>Services</span> We Provide</h2>
+            <p class="services-description">
+                We offer a comprehensive range of construction services, including residential and commercial building,
+                renovation, interior design, and project management.
+                Our skilled team ensures high-quality craftsmanship, timely delivery, and cost-effective solutions.
+                From concept to completion, we turn your ideas into reality with excellence and reliability.
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <div class="buit-container">
+        <div class="buit-box">
+            <img class="buit-pic" src="/const/images/40dfd225e5f24c834242b61979650d83.png" alt="Consulting">
+            <a href="./consulting.html" class="buit-tag">Consulting</a>
+        </div>
+        <div class="buit-box">
+            <img class="buit-pic" src="/const/images/8ea5e1978a24e85141f5369fd6b00ed1.png" alt="Estimate">
+            <a href="./estimate.html" class="buit-tag">Estimate</a>
+        </div>
+    </div>
+
+    <div class="const-row">
+        <div class="const-large">
+            <img class="const-pic" src="/const/images/9d34c47344837dd70b5e154254662a81.jpeg" alt="Plan & Design">
+            <a href="./plan-design.html" class="const-tag">Plan & Design</a>
+        </div>
+        <div class="const-small">
+            <img class="const-pic" src="/const/images/image 6.png " alt="Construction">
+            <a href="./constructions.html" class="const-tag">Construction</a>
+        </div>
+    </div>
+
+    <div class="buit-container">
+        <div class="buit-box">
+            <img class="buit-pic" src="/const/images/19074.png" alt="Consulting">
+            <a href="./flooring.html" class="buit-tag">Flooring Work</a>
+        </div>
+        <div class="buit-box">
+            <img class="buit-pic" src="/const/images/istockphoto-938085736-612x612.png" alt="Estimate">
+            <a href="./painting-work.html" class="buit-tag">Painting Work</a>
+        </div>
+    </div>
+    <div class="view-btn">
+        <a href="./services.html"><button>View More</button></a>
+    </div>
+
+    <!-- Review section starts here -->
+    <div class="review">
+        <div class="review-section">
+            <h2 class="review-title">Our <span class="highlight">Client</span> Reviews</h2>
+
+            <div class="review-container">
+                <div class="review-card">
+                    <img class="review-img" src="/const/images/Rectangle 16.png " alt="Review 1">
+                    <div class="review-content">
+                        <img class="profile-pic" src="/const/images/aron.jpeg" alt="Aaron">
+                        <h3>Aaron</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur Netus aliquam aliquet urna eu quis vel non aenean
+                            urna.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="review-card1">
+                    <img class="review-img" src="/const/images/Rectangle 17.png" alt="Review 2">
+                    <div class="review-content">
+                        <img class="profile-pic" src="/const/images/adlina.jpeg" alt="Adelina">
+                        <h3>Adelina</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur Netus aliquam aliquet urna eu quis vel non aenean
+                            urna.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <img class="review-img" src="/const/images/Rectangle 18.png  " alt="Review 3">
+                    <div class="review-content">
+                        <img class="profile-pic" src="/const/images/client.jpeg" alt="Client">
+                        <h3>Client</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur Netus aliquam aliquet urna eu quis vel non aenean
+                            urna.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer section starts here  -->
+    <div class="footer">
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-column">
+                <img src="/const/images/logo.jpg" alt="Nagercoil Builders Logo" class="footer-logo">
+                <!-- <h3><span class="highlight">Nagercoil</span> Builders</h3> -->
+                <p>Nagercoil Builders offering a range of services from residential and commercial building to interior
+                    design and renovation.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nagercoilbuilderss?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="/const/images/instagram.png" alt="Instagram"></a>
+                    <a href="http://www.youtube.com/@Nagercoilbuilders"><img src="/const/images/youtube.png" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/profile.php?id=61563730416828"><img src="/const/images/communication.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-column">
+                <h4 class="highlight">Categories</h4>
+                <ul >
+                    <a href="/about/index.html" style="text-decoration: none;color: white;"><li>About Us</li></a>
+                    <a href="/service/index.html" style="text-decoration: none;color: white;"> <li>Services</li></a>
+                    <a href="./design&plan.html" style="text-decoration: none;color: white;"><li>Plans and Pricing</li></a>
+                    <a href="/project1/index.html" style="text-decoration: none;color: white;"><li>Projects</li></a>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h4 class="highlight">Contact Us</h4>
+                <ul class="contact-info">
+                    <a href="tel:+919597751076" style="text-decoration: none;color: white;"><li><i class='bx bxs-phone icon'></i> +91 9597751076, 9443102048</li></a>
+                    <a href="#" style="text-decoration: none;color: white;" onclick="openPopup()"> <li><i class='bx bxs-envelope icon' ></i> nagercoilbuilders2@gmail.com</li></a>
+                    <a href="./index.html" style="text-decoration: none;color: white;"><li><i class='bx bx-world icon' ></i> www.nagercoilbuilders.com</li></a>
+                    <a href="#" style="text-decoration: none;color: white;" class="info1"><li><i class='bx bxs-navigation icon location'></i> 4/26A Adaikalapattinam, Pavoorchatram.</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu(){
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+function showBasic() {
+    document.querySelector('.row1').classList.remove('hidden');
+    document.querySelector('.row2').classList.add('hidden');
+    document.querySelector('.row3').classList.add('hidden');
+}
+
+function showStandard() {
+    document.querySelector('.row1').classList.add('hidden');
+    document.querySelector('.row2').classList.remove('hidden');
+    document.querySelector('.row3').classList.add('hidden');
+}
+
+function showPremium() {
+    document.querySelector('.row1').classList.add('hidden');
+    document.querySelector('.row2').classList.add('hidden');
+    document.querySelector('.row3').classList.remove('hidden');
+}
+
+
+document.querySelector(".btn-basic").addEventListener("click", function () {
+    this.style.backgroundColor = "#f4b400"; // Changes to green when clicked
+    document.querySelector(".btn-standard").style.backgroundColor = "#0c0c3c";
+    document.querySelector(".btn-premium").style.backgroundColor = "#0c0c3c";
+
+});
+
+document.querySelector(" .btn-standard").addEventListener("click", function () {
+    this.style.backgroundColor = "#f4b400"; // Changes to green when clicked
+    document.querySelector(".btn-basic").style.backgroundColor = "#0c0c3c";
+    document.querySelector(".btn-premium").style.backgroundColor = "#0c0c3c";
+
+});
+
+document.querySelector(".btn-premium").addEventListener("click", function () {
+    this.style.backgroundColor = "#f4b400"; // Changes to green when clicked
+    document.querySelector(".btn-basic").style.backgroundColor = "#0c0c3c";
+    document.querySelector(".btn-standard").style.backgroundColor = "#0c0c3c";
+
+});
+// function openPopup() {
+//     document.getElementById("enquiryPopup").style.display = "flex";
+// }
+// function closePopup() {
+//     document.getElementById("enquiryPopup").style.display = "none";
+// }
+
+
+// document.getElementById("phone").addEventListener("input", function (e) {
+//     this.value = this.value.replace(/[^0-9]/g, ""); // Only numbers
+
+//     // Restrict to 10 digits
+//     if (this.value.length > 10) {
+//       this.value = this.value.slice(0, 10);
+//     }
+// });
+
+// document.getElementById("phone").addEventListener("blur", function () {
+//     if (this.value.length !== 10) {
+//       alert("Phone number must be exactly 10 digits!");
+//       this.value = ""; // Clear input if not 10 digits
+//     }
+// });
+
+// const form = document.getElementById("form");
+// const result = document.getElementById("result");
+
+// form.addEventListener("submit", function (e) {
+// const formData = new FormData(form);
+// e.preventDefault();
+// var object = {};
+// formData.forEach((value, key) => {
+//     object[key] = value;
+// });
+// var json = JSON.stringify(object);
+// result.innerHTML = "Please wait...";
+
+// fetch("https://api.web3forms.com/submit", {
+//     method: "POST",
+//     headers: {
+//     "Content-Type": "application/json",
+//     Accept: "application/json"
+//     },
+//     body: json
+// })
+//     .then(async (response) => {
+//     let json = await response.json();
+//     if (response.status == 200) {
+//         result.innerHTML = json.message;
+//         result.classList.remove("text-gray-500");
+//         result.classList.add("text-green-500");
+//     } else {
+//         console.log(response);
+//         result.innerHTML = json.message;
+//         result.classList.remove("text-gray-500");
+//         result.classList.add("text-red-500");
+//     }
+//     })
+//     .catch((error) => {
+//     console.log(error);
+//     result.innerHTML = "Something went wrong!";
+//     })
+//     .then(function () {
+//     form.reset();
+//     setTimeout(() => {
+//         result.style.display = "none";
+//     }, 5000);
+//     });
+// });
+
+
+
+
+// ✅ Open & Close Popup
+function openPopup() {
+    let popup = document.getElementById("enquiryPopup");
+    if (popup) popup.style.display = "flex";
+}
+
+function closePopup() {
+    let popup = document.getElementById("enquiryPopup");
+    if (popup) popup.style.display = "none";
+}
+
+// ✅ Phone Number Validation
+const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, ""); // Allow only numbers
+    if (this.value.length > 10) this.value = this.value.slice(0, 10); // Restrict to 10 digits
+});
+
+phoneInput.addEventListener("paste", function (e) {
+    e.preventDefault(); // Block pasting non-numeric values
+});
+
+phoneInput.addEventListener("blur", function () {
+    if (this.value.length !== 10) {
+        alert("Phone number must be exactly 10 digits!");
+        this.value = ""; // Clear input if invalid
+    }
+});
+
+// ✅ Form Submission Handling
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    
+    // Check if phone number is exactly 10 digits before submission
+    if (phoneInput.value.length !== 10) {
+        alert("Phone number must be exactly 10 digits!");
+        return;
+    }
+
+    // Validate "I'm not a robot" checkbox
+    const robotCheck = document.getElementById("robotCheck");
+    if (!robotCheck.checked) {
+        alert("Please confirm that you are not a robot!");
+        return;
+    }
+
+    // ✅ Prepare Data for Web3Forms API
+    const formData = new FormData(form);
+    let object = {};
+    formData.forEach((value, key) => { object[key] = value; });
+    let json = JSON.stringify(object);
+
+    // ✅ Display "Please wait..." Message
+    result.innerHTML = "Please wait...";
+    result.style.display = "block";
+
+    // ✅ Send Request to Web3Forms
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = json.message;
+            result.classList.replace("text-gray-500", "text-green-500");
+
+            // ✅ Auto-close popup after 2 seconds
+            setTimeout(() => {
+                closePopup();
+            }, 2000);
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+            result.classList.replace("text-gray-500", "text-red-500");
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+        result.classList.replace("text-gray-500", "text-red-500");
+    })
+    .finally(() => {
+        form.reset();
+        setTimeout(() => { result.style.display = "none"; }, 5000);
+    });
+});
+
+    </script>
+    
+</body>
+
+</html>
